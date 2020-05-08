@@ -4,7 +4,6 @@ const withData = WrappedComponent => {
   class WithData extends React.Component {
     constructor(props) {
       super(props);
-
       this.state = {
         data: []
       };
@@ -20,9 +19,8 @@ const withData = WrappedComponent => {
 
     render() {
       const { dataSource, ...otherProps } = this.props;
-
       return this.state.data.length < 1 ? (
-        <h1>LOADING</h1>
+        <h1>. . . </h1>
       ) : (
         <WrappedComponent data={this.state.data} {...otherProps} />
       );
